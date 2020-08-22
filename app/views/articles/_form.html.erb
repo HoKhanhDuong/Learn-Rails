@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+  <% if @article.errors.any? %>
+    <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+            <li> <%= msg %></li>
+        <%end%>
+    </ul>
+  <%end%>
+
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
